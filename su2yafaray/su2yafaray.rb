@@ -58,7 +58,6 @@ require 'sketchup.rb'
 unless SU2YAFARAY.on_mac?
 	require 'Win32API'
 	require 'registry'
-end
 
 #path=SU2YAFARAY.get_yafaray_path_from_registry
 path=File.join(File.dirname(__FILE__),'bin')
@@ -170,9 +169,12 @@ LoadLibrary = Win32API.new("kernel32","LoadLibrary",["P"],"I")
  dllname=path+'/libyafarayqt.dll'
  LoadLibrary.call(dllname)   
  end
- 
+end
+
+#unless SU2YAFARAY.on_mac?
  require 'yafqt'
  require 'yafrayinterface'
+#end
 
 module SU2YAFARAY
 
@@ -230,7 +232,7 @@ SCENE_NAME='default.xml'
 
 def SU2YAFARAY.render(useXML)
 	start_time=Time.new
-	#Sketchup.send_action "showRubyPanel:"
+  #Sketchup.send_action "showRubyPanel:"
 	# @ys=YafaraySettings.new
 	# SU2YAFARAY.reset_variables
 	if useXML
@@ -262,7 +264,7 @@ def SU2YAFARAY.render(useXML)
 		else
 			yi.clearAll();
 		end
-	end
+  end
 end
 
 

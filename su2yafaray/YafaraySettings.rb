@@ -34,7 +34,7 @@ class YafaraySettings
 	'raydepth'=>'2',
 	'z_channel'=>false,
 	'transpShad'=>false,
-	'clayrender'=>false,
+	'clayrender'=>true,
 	'shadowDepth'=>'64',
 	'auto_threads'=>true,
 	'threads'=>'1',
