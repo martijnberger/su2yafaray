@@ -204,7 +204,7 @@ def export_integrator(yi)
 		if @ys.do_AO
 			yi.paramsSetInt("AO_samples",Integer(@ys.AO_samples))
 			yi.paramsSetFloat("AO_distance", Float(@ys.AO_distance))
-			SU2YAFARAY.paramsSetColorHex(yi,"AO_color",@ys.AO_color)
+			paramsSetColorHex(yi,"AO_color",@ys.AO_color)
 		end
 	elsif (@ys.light_type=="photonmapping")
 		yi.paramsSetString("type", "photonmapping")
